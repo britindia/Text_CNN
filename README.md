@@ -87,7 +87,7 @@ gcloud ai-platform jobs submit training $JOB_NAME \
 ```
 
 ## Distributed mode
-
+```
 gcloud ai-platform jobs submit training $JOB_NAME \
     --job-dir $OUTPUT_PATH \
     --bucket $BUCKET_NAME \
@@ -100,7 +100,7 @@ gcloud ai-platform jobs submit training $JOB_NAME \
     -- \
     --bucket $BUCKET_NAME \
     --OUTPUT_PATH $OUTPUT_PATH \
-
+```
 
 ## References
 
