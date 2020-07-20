@@ -54,12 +54,12 @@ optional arguments:
 - Place empty __init__.py files in /trainer and /online_prediction folders to call custom python modules.
 ```
 
-## Train:
+Train:
 ```bash
 ./train.py
 ```
 
-## Evaluate
+## Evaluating
 ```bash
 ./eval.py --eval_train --checkpoint_dir="./runs/1459637919/checkpoints/"
 ```
@@ -68,6 +68,8 @@ Replace the checkpoint dir with the output from the training. To use your own da
 
 
 ## To run on GCP
+Initialize variables - 
+
 ```
 JOB_NAME="text_cnn_training_"$(date '+%s')
 BUCKET_NAME=<>your bucket>
