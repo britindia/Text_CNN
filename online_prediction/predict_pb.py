@@ -65,7 +65,7 @@ if __name__ == '__main__':
     
     
     # We use our "load_graph" function
-    graph = load_graph(FLAGS.frozen_model_filename)
+    graph = load_graph(os.path.join(FLAGS.bucket,FLAGS.frozen_model_filename))
 
     # We can verify that we can access the list of operations in the graph
     for op in graph.get_operations():
@@ -87,8 +87,10 @@ if __name__ == '__main__':
         batch_predictions = sess.run(predictions, {input_x: x_test, dropout_keep_prob: 1.0})
         if batch_predictions == 0:
                sentiment = ["Negative"]
-        else:
+        elif batch_predictions == 1:
                sentiment = ["Positive"]
+        else: 
+               sentiment = ["Unknown"]
         print("Sentiment : {}".format(sentiment))
         all_predictions = []
         all_predictions = np.concatenate([all_predictions, sentiment])
