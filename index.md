@@ -11,7 +11,7 @@ Aim:
 
 ### Download and set-up model for training
 
-Download model from - https://github.com/britindia/Text_CNN/tree/master/trainer
+Download model from - [Link] (https://github.com/britindia/Text_CNN/tree/master/trainer)
 
 I highly recommend creating virtual environment to test and train the model. Virtual env help keep all dependencies together. 
 I used Python 3.5 for this project.
