@@ -1,4 +1,4 @@
-## Sentiment Analysis with Tensotflow
+## Sentiment Analysis with Tensorflow
 
 Aim: 
 1.	Train a Convolution Neural Network (CNN) ML prediction model using Tensorflow predicting sentiment (Positive/Negative) of movie reviews posted on RottenTomato.
@@ -11,7 +11,7 @@ Aim:
 
 ### Download and set-up model for training
 
-Download model from - [https://github.com/britindia/Text_CNN/tree/master/trainer]
+Download model from - https://github.com/britindia/Text_CNN/tree/master/trainer
 
 I highly recommend creating virtual environment to test and train the model. Virtual env help keep all dependencies together. 
 I used Python 3.5 for this project.
