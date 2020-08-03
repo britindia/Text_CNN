@@ -4,7 +4,7 @@ Aim:
 1.	Train a Convolution Neural Network (CNN) ML prediction model using Tensorflow predicting sentiment (Positive/Negative) of movie reviews posted on RottenTomato.
 2.	Train locally and on GCP(AI Platform)
 3.	Perform Hyper-tuning and monitor model performance using tensorboard
-4.	Save model protobuff file (crate .pb file)
+4.	Save model protobuff file (create .pb file)
 5.	Serve predictions from .pb file
 6.	Package model as Online live application using Flask and host on GCP (App Engine)
 
