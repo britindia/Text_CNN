@@ -81,16 +81,28 @@ if __name__ == '__main__':
     dropout_keep_prob = graph.get_tensor_by_name('prefix/dropout_keep_prob:0')
     # Tensors we want to evaluate
     predictions = graph.get_tensor_by_name('prefix/output/predictions:0')
-
+    
+       
     # We launch a Session
     with tf.Session(graph=graph) as sess:
         batch_predictions = sess.run(predictions, {input_x: x_test, dropout_keep_prob: 1.0})
+        # below code is to capture text not recognozed by model. We will siplay a sorry message if 
+        # model is not able to recognize review
+        a=0
+        for i in x_test:
+            for y in i:
+                a += y
+        print("a : {}".format(a))
+        if a==0:
+            batch_predictions=2
+            
+        # convert numeric sentiment to text
         if batch_predictions == 0:
                sentiment = ["Negative"]
         elif batch_predictions == 1:
                sentiment = ["Positive"]
         else: 
-               sentiment = ["Unknown"]
+               sentiment = ["Sorry. Model is not able to recognize review. Please enter another review."]
         print("Sentiment : {}".format(sentiment))
         all_predictions = []
         all_predictions = np.concatenate([all_predictions, sentiment])
