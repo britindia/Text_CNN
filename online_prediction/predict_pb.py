@@ -1,4 +1,4 @@
-#! /usr/bin/env python3.5
+#! /usr/bin/env python
 import sys
 import tensorflow as tf
 print("tensorfklow version: {}".format(tf.__version__))
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     # raw_input has the review entered by user
     tf.flags.DEFINE_string("frozen_model_filename", "text_cnn3.pb", "Frozen model file to import.")
     tf.flags.DEFINE_string("raw_input", "/tmp/input_reviews.csv", "Raw data for reviews entered Online.")
-    tf.flags.DEFINE_string("bucket", "gs://ordinal-reason-282519-aiplatform/text_cnn_training_071320201841", "Current directory.")
+    tf.flags.DEFINE_string("output_path", "gs://ordinal-reason-282519-aiplatform/text_cnn_training_071320201841", "Current directory.")
     tf.flags.DEFINE_string("raw_text", "", "text entered by the user")
     tf.flags.DEFINE_boolean("eval_train", True, "Evaluate on all training data")
     
@@ -58,14 +58,14 @@ if __name__ == '__main__':
     else:
         x_raw = [FLAGS.raw_text]
     
-    vocab_path = os.path.join(FLAGS.bucket, "vocab")
+    vocab_path = os.path.join(FLAGS.output_path, "vocab")
     vocab_processor = learn.preprocessing.VocabularyProcessor.restore(vocab_path)
     x_test = np.array(list(vocab_processor.transform(x_raw)))
     print("x_test: {}".format(x_test))
     
     
     # We use our "load_graph" function
-    graph = load_graph(os.path.join(FLAGS.bucket,FLAGS.frozen_model_filename))
+    graph = load_graph(os.path.join(FLAGS.output_path,FLAGS.frozen_model_filename))
 
     # We can verify that we can access the list of operations in the graph
     for op in graph.get_operations():
