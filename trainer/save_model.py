@@ -30,5 +30,5 @@ with tf.Session() as sess:
         output_node_names)
 
     # Save the frozen graph
-    with open('text_cnn_2020.pb', 'wb') as f:
+    with open('text_cnn.pb', 'wb') as f:
       f.write(frozen_graph_def.SerializeToString())
