@@ -1,1 +1,1 @@
-This is app engine code to render front end and serve predcitions
+This is app engine code to render front end and serve predictions
